@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #60b2ff;
+}
+
+.main-screen {
+    width: 100%;
+    height: 130vh;
+    position: relative;
+    background: radial-gradient(153.06% 141.42% at 100% 0,#0028b6 0,#60b2ff 100%);
+}
+
+.main-screen::after {
+    left: 0;
+    top: 0;
+    width: 90%;
+    height: 100%;
+    z-index: 999;
+    background: red;
+    position: absolute;
+}
+
+.atom-position {
+    top: 0;
+    right: 0;
+    width: 100%;
+    max-width: 800px;
+    position: fixed;
+    aspect-ratio: 1/0.8;
+}
+
+.atom-container {
+    width: 70%;
+    max-width: 600px;
+    aspect-ratio: 1/1;
+    position: relative;
+    margin-left: 1em;
+    margin-top: 3em;
+    animation: rotate 8s linear infinite;
+}
+
+.large-atom {
+    top: -20%;
+    right: -10%;
+    width: 70%;
+    max-width: 800px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.small-atom {
+    top: 10%;
+    right: 10%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.atom-container .atom {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: relative;
+    border: .649px solid #dfb443;
+}
+
+.atom-container .atom::before,
+.atom-container .atom::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    top: 50%;
+    left: -12px;
+    position: absolute;
+    border: 2px solid #dfb443;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.atom-container .atom::after {
+    top: -11px;
+    left: 50%;
+    background: white;
+    border-color: white;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.atom-container .atom .atom-image {
+    bottom: -21px;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    background: url(./assets/icons/ball.png) no-repeat center center;
+    background-size: cover;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
